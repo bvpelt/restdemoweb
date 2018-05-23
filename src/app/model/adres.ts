@@ -1,5 +1,9 @@
+import {Persoon} from './persoon';
+import {AdresLinks} from './adreslinks';
+
 export class Adres {
-  constructor(adresId, straatNaam, huisNummer, huisNummerToevoeging, postCode, woonPlaats, telefoonNummer) {
+
+  constructor(adresId, straatNaam, huisNummer, huisNummerToevoeging, postCode, woonPlaats, telefoonNummer, personen, links) {
     this._adresId = adresId;
     this._straatNaam = straatNaam;
     this._huisNummer = huisNummer;
@@ -7,6 +11,8 @@ export class Adres {
     this._postCode = postCode;
     this._woonPlaats = woonPlaats;
     this._telefoonNummer = telefoonNummer;
+    this._personen = personen;
+    this._links = links;
   }
 
   private _adresId: number;
@@ -77,5 +83,23 @@ export class Adres {
 
   set telefoonNummer(value: string) {
     this._telefoonNummer = value;
+  }
+
+  private _personen: Persoon[];
+  get personen(): Persoon[] {
+    return this._personen;
+  }
+
+  set personen(value: Persoon[]) {
+    this._personen = value;
+  }
+
+  private _links: AdresLinks;
+  get links(): AdresLinks {
+    return this._links;
+  }
+
+  set links(value: AdresLinks) {
+    this._links = value;
   }
 }
