@@ -1,0 +1,28 @@
+<h2>Adressen</h2>
+
+<div *ngIf="adresdata">
+  <ul class="adressen">
+    <div *ngFor="let adres of adresdata.adres">
+      <a routerLink="/detail/{{adres.adresId}}">
+        <span class="adres">{{adres.adresId}}</span> {{adres.straatNaam}} {{adres.huisNummer}}
+        {{adres.huisNummerToevoeging}} {{adres.postCode}} {{adres.woonPlaats}} {{adres.telefoonNummer}}
+      </a>
+      <button class="delete" title="delete adres" (click)="delete(adres)">delete</button>
+      <button class="delete" title="add persoon" >add persoon</button>
+      <app-persoon [personen]="adres.personen"></app-persoon>
+    </div>
+  </ul>
+</div>
+<div>
+  <label>straat : <input #straatNaam></label><br/>
+  <label>huisnummer : <input #huisNummer></label><br/>
+  <label>huisnummer toevoeging: <input #huisNummerToevoeging></label><br/>
+  <label>postcode : <input #postCode></label><br/>
+  <label>woonplaats : <input #woonPlaats></label>
+  <label>telefoonNummer : <input #telefoonNummer></label>
+</div>
+<button
+  (click)="add(straatNaam.value, huisNummer.value, huisNummerToevoeging.value, postCode.value, woonPlaats.value, telefoonNummer.value); straatNaam.value=''; huisNummer.value=''; huisNummerToevoeging.value=''; postCode.value=''; woonPlaats.value=''; telefoonNummer.value='';">
+  add
+</button>
+

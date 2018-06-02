@@ -1,0 +1,11 @@
+<h3>Top Adressen</h3>
+<div *ngIf="adresdata">
+  <div class="grid grid-pad">
+    <a *ngFor="let adres of adresdata.adres" class="col-1-4" routerLink="/detail/{{adres.adresId}}">
+      <div class="module adres">
+        <h4>{{adres.adresId}} {{adres.straatNaam}} {{adres.huisNummer}}
+          {{adres.huisNummerToevoeging}} {{adres.postCode}} {{adres.woonPlaats}}</h4>
+      </div>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div *ngIf="adres">
+  <div class="adreseditor">
+    <h2>Adres {{adres.adresId}} Details</h2>
+    <div>
+      <label>straat : <input [(ngModel)]="adres.straatNaam" placeholder="straat naam"></label><br/>
+      <label>huisnummer : <input [(ngModel)]="adres.huisNummer" placeholder="huisnummer"></label><br/>
+      <label>huisnummer toevoeging: <input [(ngModel)]="adres.huisNummerToevoeging"
+                                           placeholder="huisnummer toevoeging"></label><br/>
+      <label>postcode : <input [(ngModel)]="adres.postCode" placeholder="postcode"></label><br/>
+      <label>woonplaats : <input [(ngModel)]="adres.woonPlaats" placeholder="woonplaats"></label>
+    </div>
+    <button (click)="save()">save</button>
+    <button (click)="goBack()">go back</button>
+  </div>
+</div>
+

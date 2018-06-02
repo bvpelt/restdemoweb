@@ -29,4 +29,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # References
 - Angular https://angular.io/tutorial/
 - Angular debugging with webstorm https://blog.jetbrains.com/webstorm/2017/01/debugging-angular-apps/ 
+- Table generator http://divtable.com/generator/
 
